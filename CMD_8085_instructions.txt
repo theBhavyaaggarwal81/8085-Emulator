@@ -1,0 +1,19 @@
+g++ -c main.cpp
+g++ -c essentials.cpp
+g++ -c execution.cpp
+g++ -c memory_allocation.cpp
+g++ -c logical.cpp
+g++ -c branching.cpp
+g++ -c load_and_store.cpp
+g++ -c set.cpp
+g++ -c get.cpp
+g++ -c arithmetic.cpp
+g++ main.o essentials.o execution.o memory_allocation.o logical.o branching.o load_and_store.o set.o get.o arithmetic.o
+
+
+
+
+
+cd Desktop
+cd "8085 Remake"
+a.exe
