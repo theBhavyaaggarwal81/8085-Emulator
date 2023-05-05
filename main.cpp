@@ -16,9 +16,8 @@ int main(){
     vector<string>sequence;
     string registers[]={"00", "00", "00", "00", "00", "00", "00"};
     bool flag[]={false, false, false, false, false, false, false, false};
-    string pc,*pc_address;
-    pc_address = &pc;
-    string start;
+    string pc;
+    string start, end;
     string instruction,command;
     ifstream file(FILE_NAME);
 
@@ -38,6 +37,7 @@ int main(){
             instruction = command.substr(0, command.find(" "));
             pc = allocate_memory(pc, instruction);
         }
+        end = pc;
         file.close();
         cout <<endl;
 
@@ -65,7 +65,6 @@ int main(){
         pc = "0x2000";
         getline(file,pc);
         while(!file.eof()){
-            cout << c << endl;
             sequence.push_back(pc);
             getline(file,command);
             memory[pc] = command;
@@ -101,7 +100,7 @@ int main(){
         //Printing the PC :
         cout << endl << endl;
 
-        cout << "PROGRAM COUNTER : " <<endl<< start << " to "<< pc << endl <<endl <<endl;
+        cout << "PROGRAM COUNTER : " <<endl<< start << " to "<< end << endl <<endl <<endl;
 
         //Printing the final output
         do{
